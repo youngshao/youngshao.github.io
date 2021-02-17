@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      140 字
+      156 字
     </span>
   
 
@@ -246,7 +246,10 @@
               </p>
             
             <div class="markdown-body">
-              <p>目录<br>[TOC]</p>
+              <p>简单记录数字签名和数字证书的关系</p>
+<a id="more"></a>
+
+<p>目录<br>[TOC]</p>
 <h1 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h1><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">明文内容</span> --<span class="hljs-comment">摘要算法</span>--&gt; <span class="hljs-comment">摘要明文</span> --<span class="hljs-comment">私钥加密</span>--&gt; <span class="hljs-comment">摘要密文(数字签名)</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"></span>                            <span class="hljs-comment">摘要密码</span> --<span class="hljs-comment">公钥解密</span>--&gt; <span class="hljs-comment">摘要明文</span><br><span class="hljs-comment">明文内容</span> <span class="hljs-literal">+</span> <span class="hljs-comment">摘要密文</span> --<span class="hljs-comment">发送</span>--&gt;                               <span class="hljs-comment">两个摘要明文是否相等？</span><br><span class="hljs-comment"></span>                            <span class="hljs-comment">明文内容</span> --<span class="hljs-comment">摘要算法</span>--&gt; <span class="hljs-comment">摘要明文</span><br></code></pre></td></tr></table></figure>
 
 <h1 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h1><p>CA信息 + 网站公钥 + 其他信息 <code>--CA私钥进行数字签名--&gt;</code> 网站的CA数字签名</p>
