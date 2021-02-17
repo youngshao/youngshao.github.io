@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="水长">
   <meta name="keywords" content="">
-  <title>git中文乱码 - 水长的Blog</title>
+  <title>打印码流 - 水长的Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -157,12 +157,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/2021/02/git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81.png') no-repeat center center;
+         style="background: url('/images/default.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="git中文乱码">
+            <span class="h2" id="subtitle" title="打印码流">
               
             </span>
 
@@ -177,8 +177,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-15 15:02" pubdate>
-        2021年2月15日 下午
+      <time datetime="2021-02-17 20:43" pubdate>
+        2021年2月17日 晚上
       </time>
     </span>
   
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      217 字
+      381 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      7
        分钟
     </span>
   
@@ -237,7 +237,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">git中文乱码</h1>
+            <h1 style="display: none">打印码流</h1>
             
               <p class="note note-info">
                 
@@ -247,12 +247,7 @@
             
             <div class="markdown-body">
               <p>目录<br>[TOC]</p>
-<h2 id="Linux、Mac-OS-X以及Windows下的Cygwin缺省使用UTF-8字符集"><a href="#Linux、Mac-OS-X以及Windows下的Cygwin缺省使用UTF-8字符集" class="headerlink" title="Linux、Mac OS X以及Windows下的Cygwin缺省使用UTF-8字符集"></a>Linux、Mac OS X以及Windows下的Cygwin缺省使用UTF-8字符集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config --global core.quotepath <span class="hljs-literal">false</span> <span class="hljs-comment"># 解决 git status 中文件路径的编码问题</span><br></code></pre></td></tr></table></figure>
-<p>core.quotepath设为false的话，就不会对0x80以上的字符进行quote。中文显示正常。</p>
-<h2 id="Windows平台使用msysGit或者其他平台使用了非UTF-8字符集"><a href="#Windows平台使用msysGit或者其他平台使用了非UTF-8字符集" class="headerlink" title="Windows平台使用msysGit或者其他平台使用了非UTF-8字符集"></a>Windows平台使用msysGit或者其他平台使用了非UTF-8字符集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config --global core.quotepath <span class="hljs-literal">false</span> <span class="hljs-comment"># 解决 git status 中文件路径的编码问题</span><br>$ git config --global gui.encoding utf-8 <span class="hljs-comment"># 图形Git GUI界面编码</span><br>$ git config --global i18n.commitencoding utf-8 <span class="hljs-comment"># 提交信息编码,可避免服务器上乱码,同时与linux上的提交保持一致</span><br>$ git config --global i18n.logoutputencoding utf-8 <span class="hljs-comment"># 输出 log 编码</span><br>$ <span class="hljs-built_in">export</span> LESSCHARSET=utf-8 <span class="hljs-comment"># 同时Windows我的电脑添加环境变量</span><br>$ vi /etc/git-completion.bash <span class="hljs-comment"># 新增一行 alias ls=”ls –show-control-chars”</span><br></code></pre></td></tr></table></figure>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="https://www.worldhello.net/gotgit/08-git-misc/020-git-charset.html">8.1.1. 字符集问题</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903895706107912">常见的三种 git 乱码问题</a></p>
-
+<h2 id="C语言版码流打印函数"><a href="#C语言版码流打印函数" class="headerlink" title="C语言版码流打印函数"></a>C语言版码流打印函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print_msg_hex</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *msg, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> msgLen, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *desc)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __BUF_LEN__ 16</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __RED__     <span class="hljs-meta-string">&quot;\e[31m&quot;</span>    <span class="hljs-comment">//前景红色</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __GREEN__   <span class="hljs-meta-string">&quot;\e[32m&quot;</span>    <span class="hljs-comment">//前景绿色</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __RESET__   <span class="hljs-meta-string">&quot;\e[39m&quot;</span>    <span class="hljs-comment">//前景色默认</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __ON_RV__   <span class="hljs-meta-string">&quot;\e[7m&quot;</span>     <span class="hljs-comment">//开启反显</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __OFF_RV__  <span class="hljs-meta-string">&quot;\e[27m&quot;</span>    <span class="hljs-comment">//关闭反显</span></span><br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> buf[__BUF_LEN__ + <span class="hljs-number">10</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> row = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> row_len = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> col = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> graph_num = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * delimiter = <span class="hljs-string">&quot; | &quot;</span>;<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;----------------------------------------------------------------------\n&quot;</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;desc: %s%s%s\n&quot;</span>, __RED__, desc, __RESET__);<br><br>    row_len = (msgLen / __BUF_LEN__ + ((msgLen % __BUF_LEN__) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>));<br>    row_len = <span class="hljs-built_in">snprintf</span>(buf, <span class="hljs-keyword">sizeof</span>(buf), <span class="hljs-string">&quot;%u&quot;</span>, row_len);<br>    row_len = (<span class="hljs-built_in">snprintf</span>(buf, <span class="hljs-keyword">sizeof</span>(buf), <span class="hljs-string">&quot;%u&quot;</span>, msgLen) &gt; row_len + <span class="hljs-number">1</span>) ? <span class="hljs-built_in">snprintf</span>(buf, <span class="hljs-keyword">sizeof</span>(buf), <span class="hljs-string">&quot;%u&quot;</span>, msgLen) - <span class="hljs-number">1</span> : row_len;<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s%*u%s&quot;</span>, __RED__, row_len + <span class="hljs-number">1</span>, msgLen, __RESET__);<br>    col = msgLen &lt; __BUF_LEN__ ? msgLen % __BUF_LEN__ : __BUF_LEN__;<br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; col; i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot; %-2X&quot;</span>, i);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br><br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; msgLen; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (i % __BUF_LEN__ == <span class="hljs-number">0</span>)<br>        &#123;<br>            row++;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%*u:&quot;</span>, row_len, row);<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot; &quot;</span>); <span class="hljs-comment">// 补充空白</span><br>            <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> == row % <span class="hljs-number">2</span>)<br>            &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>, __ON_RV__);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot; &quot;</span>); <span class="hljs-comment">// 补充空白</span><br>        &#125;<br><br>        <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> != <span class="hljs-built_in">isgraph</span>(msg[i]))<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s%02hhx%s&quot;</span>, __GREEN__, msg[i], __RESET__);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%02hhx&quot;</span>, msg[i]);<br>        &#125;<br>        buf[i % __BUF_LEN__] = msg[i];<br><br>        graph_num = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span> (__BUF_LEN__ - <span class="hljs-number">1</span> == i % __BUF_LEN__)<br>        &#123;<br>            graph_num = __BUF_LEN__;<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i + <span class="hljs-number">1</span> == msgLen)<br>        &#123;<br>            graph_num = msgLen % __BUF_LEN__;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (graph_num)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%*s&quot;</span>, (<span class="hljs-number">1</span> == row) ? <span class="hljs-number">0</span> : (__BUF_LEN__ - graph_num) * <span class="hljs-number">3</span>, <span class="hljs-string">&quot;&quot;</span>); <span class="hljs-comment">//补充空白</span><br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>, __OFF_RV__);<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>, delimiter);<br>            <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; graph_num; j++)<br>            &#123;<br>                <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> != <span class="hljs-built_in">isgraph</span>(buf[j]))<br>                &#123;<br>                    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s%c%s&quot;</span>, __RED__, buf[j], __RESET__);<br>                    <span class="hljs-comment">//printf(&quot;%c&quot;, buf[j]);</span><br>                &#125;<br>                <span class="hljs-keyword">else</span><br>                &#123;<br>                    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, <span class="hljs-string">&#x27;.&#x27;</span>);<br>                &#125;<br>            &#125;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -261,9 +256,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">版本管理</a>
+                      <a class="hover-with-bg" href="/categories/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/">代码片段</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/git/">git</a>
+                      <a class="hover-with-bg" href="/categories/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/C%E8%AF%AD%E8%A8%80/">C语言</a>
                     
                   </div>
                 
@@ -271,9 +266,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/git/">git</a>
+                      <a class="hover-with-bg" href="/tags/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/">代码片段</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">中文乱码</a>
+                      <a class="hover-with-bg" href="/tags/%E7%A0%81%E6%B5%81/">码流</a>
+                    
+                      <a class="hover-with-bg" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
                     
                   </div>
                 
@@ -286,18 +283,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/%E6%89%93%E5%8D%B0%E7%A0%81%E6%B5%81/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">打印码流</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">
-                        <span class="hidden-mobile">数字签名和数字证书</span>
+                      <a href="/2021/02/git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">
+                        <span class="hidden-mobile">git中文乱码</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
