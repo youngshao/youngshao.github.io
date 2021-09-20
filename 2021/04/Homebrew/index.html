@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="水长">
   <meta name="keywords" content="">
-  <title>数字签名和数字证书 - 水长的Blog</title>
+  <title>Homebrew - 水长的Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -157,12 +157,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/2021/02/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/https.jpg') no-repeat center center;
+         style="background: url('/images/default.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="数字签名和数字证书">
+            <span class="h2" id="subtitle" title="Homebrew">
               
             </span>
 
@@ -177,8 +177,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-14 21:03" pubdate>
-        2021年2月14日 晚上
+      <time datetime="2021-04-30 23:48" pubdate>
+        2021年4月30日 晚上
       </time>
     </span>
   
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      156 字
+      561 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      8
        分钟
     </span>
   
@@ -237,7 +237,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数字签名和数字证书</h1>
+            <h1 style="display: none">Homebrew</h1>
             
               <p class="note note-info">
                 
@@ -246,15 +246,39 @@
               </p>
             
             <div class="markdown-body">
-              <p>简单记录数字签名和数字证书的关系</p>
+              <p>macOS（或 Linux）缺失的软件包的管理器。主要有四个部分组成: brew、homebrew-core 、homebrew-cask、homebrew-bottles。</p>
 <a id="more"></a>
-
-<p>目录<br>[TOC]</p>
-<h1 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h1><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">明文内容</span> --<span class="hljs-comment">摘要算法</span>--&gt; <span class="hljs-comment">摘要明文</span> --<span class="hljs-comment">私钥加密</span>--&gt; <span class="hljs-comment">摘要密文(数字签名)</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"></span>                            <span class="hljs-comment">摘要密码</span> --<span class="hljs-comment">公钥解密</span>--&gt; <span class="hljs-comment">摘要明文</span><br><span class="hljs-comment">明文内容</span> <span class="hljs-literal">+</span> <span class="hljs-comment">摘要密文</span> --<span class="hljs-comment">发送</span>--&gt;                               <span class="hljs-comment">两个摘要明文是否相等？</span><br><span class="hljs-comment"></span>                            <span class="hljs-comment">明文内容</span> --<span class="hljs-comment">摘要算法</span>--&gt; <span class="hljs-comment">摘要明文</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h1><p>CA信息 + 网站公钥 + 其他信息 <code>--CA私钥进行数字签名--&gt;</code> 网站的CA数字签名</p>
-<p>CA信息 + 网站公钥 + 其他信息 + 网站的CA数字签名 <code>--&gt;</code> 网站数字证书</p>
-<img src="/2021/02/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/%E8%AF%81%E4%B9%A6%E7%BB%84%E6%88%90.png" srcset="/img/loading.gif" class="" title="证书组成结构">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>brew</td>
+<td>Homebrew源代码仓库</td>
+</tr>
+<tr>
+<td>homebrew-core</td>
+<td>Homebrew核心软件源</td>
+</tr>
+<tr>
+<td>homebrew-cask</td>
+<td>提供macos应用和大型二进制文件的安装</td>
+</tr>
+<tr>
+<td>homebrew-bottles</td>
+<td>预编译二进制软件包</td>
+</tr>
+</tbody></table>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/bin/</span>bash -c <span class="hljs-string">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></code></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>一般来说我们可以直接使用 brew install xx 命令安装我们需要的软件包，但也会有一些软件并没有包括在 homebrew 的核心库中，因此我们就需要一个命令来为 homebrew 添加第三方仓库源：brew tap 就是这个命令。</p>
+<p>brew tap 可以将更多存储库添加到 brew 跟踪，更新和安装的列表中。</p>
+<p>注：tap 是 third-party repositories 第三方库的简写</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">brew </span>search 软件名 <span class="hljs-comment"># 查询软件</span><br><span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>软件名 <span class="hljs-comment"># 安装软件</span><br><span class="hljs-keyword">brew </span>uninstall 软件名 <span class="hljs-comment"># 卸载软件</span><br><span class="hljs-keyword">brew </span>list <span class="hljs-comment"># 查看已经安装的所有软件</span><br><span class="hljs-keyword">brew </span>list 软件名 <span class="hljs-comment"># 查看安装的某个软件的所有位置</span><br><span class="hljs-keyword">brew </span>info <span class="hljs-comment"># 查看安装的软件信息总览</span><br><span class="hljs-keyword">brew </span>info 软件名 <span class="hljs-comment"># 查看某个软件的信息</span><br><span class="hljs-keyword">brew </span>deps 软件名 <span class="hljs-comment"># 列出软件包的依赖</span><br><span class="hljs-keyword">brew </span>update <span class="hljs-comment"># 更新homebrew自身</span><br><span class="hljs-keyword">brew </span>outdated <span class="hljs-comment"># 列出可以更新的软件包</span><br><span class="hljs-keyword">brew </span>upgrade 软件名<br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs awk">% brew -v<br>Homebrew <span class="hljs-number">3.0</span>.<span class="hljs-number">4</span><br>Homebrew/homebrew-core (git revision <span class="hljs-number">41328</span>; last commit <span class="hljs-number">2021</span>-<span class="hljs-number">03</span>-<span class="hljs-number">04</span>)<br>Homebrew/homebrew-cask (git revision <span class="hljs-number">2</span>efead2; last commit <span class="hljs-number">2021</span>-<span class="hljs-number">03</span>-<span class="hljs-number">04</span>)<br><br>% brew tap<br>homebrew/cask<br>homebrew/cask-drivers<br>homebrew/cask-fonts<br>homebrew/core<br><br>% brew -h<br>Example usage:<br>  brew search [TEXT|<span class="hljs-regexp">/REGEX/</span>]<br>  brew info [FORMULA...]<br>  brew install FORMULA...<br>  brew update<br>  brew upgrade [FORMULA...]<br>  brew uninstall FORMULA...<br>  brew list [FORMULA...]<br><br>Troubleshooting:<br>  brew config<br>  brew doctor<br>  brew install --verbose --debug FORMULA<br><br>Contributing:<br>  brew create [URL [--no-fetch]]<br>  brew edit [FORMULA...]<br><br>Further help:<br>  brew commands<br>  brew help [COMMAND]<br>  man brew<br>  https:<span class="hljs-regexp">//</span>docs.brew.sh<br><br>% brew config<br>HOMEBREW_VERSION: <span class="hljs-number">3.0</span>.<span class="hljs-number">4</span><br>ORIGIN: https:<span class="hljs-regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="hljs-regexp">/git/</span>homebrew/brew.git<br>HEAD: ee52b19179d056f3dd2fdf9c52214d3d51dbb9d9<br>Last commit: <span class="hljs-number">8</span> weeks ago<br>Core tap ORIGIN: https:<span class="hljs-regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="hljs-regexp">/git/</span>homebrew/homebrew-core.git<br>Core tap HEAD: <span class="hljs-number">41328788</span>deaa1441ca07b44128b6d2238faeede4<br>Core tap last commit: <span class="hljs-number">8</span> weeks ago<br>Core tap branch: master<br>HOMEBREW_PREFIX: <span class="hljs-regexp">/usr/</span>local<br>HOMEBREW_BOTTLE_DOMAIN: https:<span class="hljs-regexp">//mi</span>rrors.tuna.tsinghua.edu.cn/homebrew-bottles<br>HOMEBREW_CASK_OPTS: []<br>HOMEBREW_DISPLAY: <span class="hljs-regexp">/private/</span>tmp<span class="hljs-regexp">/com.apple.launchd.2XKlnfAA5f/</span>org.macosforge.xquartz:<span class="hljs-number">0</span><br>HOMEBREW_MAKE_JOBS: <span class="hljs-number">8</span><br>Homebrew Ruby: <span class="hljs-number">2.6</span>.<span class="hljs-number">3</span> =&gt; <span class="hljs-regexp">/System/</span>Library<span class="hljs-regexp">/Frameworks/</span>Ruby.framework<span class="hljs-regexp">/Versions/</span><span class="hljs-number">2.6</span><span class="hljs-regexp">/usr/</span>bin/ruby<br>CPU: octa-core <span class="hljs-number">64</span>-bit kabylake<br>Clang: <span class="hljs-number">11.0</span> build <span class="hljs-number">1100</span><br>Git: <span class="hljs-number">2.21</span>.<span class="hljs-number">0</span> =&gt; <span class="hljs-regexp">/Library/</span>Developer<span class="hljs-regexp">/CommandLineTools/u</span>sr<span class="hljs-regexp">/bin/gi</span>t<br>Curl: <span class="hljs-number">7.64</span>.<span class="hljs-number">1</span> =&gt; <span class="hljs-regexp">/usr/</span>bin/curl<br>macOS: <span class="hljs-number">11.2</span>.<span class="hljs-number">2</span>-x86_64<br>CLT: <span class="hljs-number">11.0</span>.<span class="hljs-number">33.16</span><br>Xcode: <span class="hljs-number">12.5</span><br>XQuartz: <span class="hljs-number">2.7</span>.<span class="hljs-number">11</span> =&gt; <span class="hljs-regexp">/opt/</span>X11<br></code></pre></td></tr></table></figure>
+<h1 id="软件源"><a href="#软件源" class="headerlink" title="软件源"></a>软件源</h1><p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/</a></p>
 
             </div>
             <hr>
@@ -264,21 +288,10 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">数字证书</a>
+                      <a class="hover-with-bg" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
                     
                   </div>
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/">数字签名</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">数字证书</a>
-                    
-                  </div>
                 
               </div>
               
@@ -289,18 +302,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">git中文乱码</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2021/04/%E5%AD%A6%E4%B9%A0rust/">
+                        <span class="hidden-mobile">学习rust</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
