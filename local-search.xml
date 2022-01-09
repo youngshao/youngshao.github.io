@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>ssl/tls自签名证书</title>
+    <link href="/2022/01/ssl-tls%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    <url>/2022/01/ssl-tls%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</url>
+    
+    <content type="html"><![CDATA[<p>ssl/tls自签名证书。</p><a id="more"></a><p>目录<br>[TOC]</p><p>TLS(Transport Layer Security): 传输层安全<br>SSL(Secure Sockets Layer): 安全套接层</p><h2 id="一键生成SSL-TLS自签名证书"><a href="#一键生成SSL-TLS自签名证书" class="headerlink" title="一键生成SSL/TLS自签名证书"></a>一键生成SSL/TLS自签名证书</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs haml">openssl req -newkey rsa:4096 \<br>            -<span class="ruby">x509 \</span><br><span class="ruby">            -sha256 \</span><br><span class="ruby">            -days <span class="hljs-number">3650</span> \</span><br><span class="ruby">            -nodes \</span><br><span class="ruby">            -out example.crt \</span><br><span class="ruby">            -keyout example.key \</span><br><span class="ruby">            -subj <span class="hljs-string">&quot;/C=CN/ST=jiangsu/L=nanjing/O=xxx company/OU=IT Department/CN=*.example.com/emailAddress=xxx@example.com&quot;</span></span><br></code></pre></td></tr></table></figure><p>在-subj行中指定的字段如下：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">C</span>=国家/地区名称。 ISO的两个字母缩写。<br><span class="hljs-attr">ST</span>=州或省名。<br><span class="hljs-attr">L</span>=地区名称。城市的名称。<br><span class="hljs-attr">O</span>=组织名称。<br><span class="hljs-attr">OU</span>=组织单位名称。<br><span class="hljs-attr">CN</span>=域名或IP。<br><span class="hljs-attr">emailAddress</span>=邮箱<br></code></pre></td></tr></table></figure><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.myfreax.com/creating-a-self-signed-ssl-certificate/">如何创建自签名SSL证书</a><br><a href="https://www.jianshu.com/p/e5f46dcf4664">如何创建自签名的 SSL 证书</a><br><a href="https://www.zhihu.com/question/37370216">浏览器如何验证HTTPS证书的合法性？</a><br><a href="https://zhuanlan.zhihu.com/p/100389013">RingCentral Tech丨证书，证书链，CA的那些事</a><br><a href="https://www.lianja.com/doc/index.php/Creating_a_Self-Signed_Certificate_(Linux_Apache)">Creating a Self-Signed Certificate (Linux Apache)</a><br><a href="https://wangdoc.com/ssh/ca.html">SSH证书登录</a><br><a href="https://www.toutiao.com/i6850656720168059399">使用Openssl制作自签证书，并应用于自己MQTT服务器通讯</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>其他</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何查看glibc版本</title>
     <link href="/2022/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8Bglibc%E7%89%88%E6%9C%AC/"/>
     <url>/2022/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8Bglibc%E7%89%88%E6%9C%AC/</url>
