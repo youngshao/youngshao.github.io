@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>dnf/yum rpm package</title>
+    <link href="/2022/01/dnf-yum-rpm-package/"/>
+    <url>/2022/01/dnf-yum-rpm-package/</url>
+    
+    <content type="html"><![CDATA[<p>dnf/yum rpm package</p><a id="more"></a><p>目录<br>[TOC]</p><p><a href="https://github.com/kernelim/linux/commits/centos7">centos7内核提交记录</a></p><hr><h2 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h2><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">rpm -ivh xxx.rpm <span class="hljs-comment"># 安装rpm软件包</span><br>rpm -Uvh xxx.rpm <span class="hljs-comment"># 升级rpm软件包</span><br>rpm -e xxx <span class="hljs-comment"># 卸载rpm软件包</span><br></code></pre></td></tr></table></figure><p><strong>rpm命令选项</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">-q, --query<br>-i, --info Display package information<br><br>rpm -qa <span class="hljs-comment"># 查询所有已安装的软件包 rpm -qa ｜ grep -i xxx 过滤</span><br>rpm -q xxx <span class="hljs-comment"># 查询软件包xxx是否安装</span><br>rpm -qi xxx <span class="hljs-comment"># 查询已安装软件包xxx的详细信息</span><br>rpm -ql xxx <span class="hljs-comment"># 查询已安装软件包xxx的文件安装路径</span><br>rpm -qc xxx <span class="hljs-comment"># 查询已安装软件包xxx的配置文件</span><br>rpm -qf 文件路径 <span class="hljs-comment"># 查询文件属于哪个rpm包</span><br>rpm -qR xxx <span class="hljs-comment"># 查询已安装软件包xxx的依赖</span><br></code></pre></td></tr></table></figure><p><strong>查看rpm包中含有的文件</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rpm -qlp xxx.rpm<br></code></pre></td></tr></table></figure><p><strong>解压rpm包到当前目录</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rpm2cpio xxx.rpm | cpio -ivmd<br></code></pre></td></tr></table></figure><hr><h2 id="dnf-yum"><a href="#dnf-yum" class="headerlink" title="dnf/yum"></a>dnf/yum</h2><hr><p><strong>下载rpm包及其依赖</strong><br>方式1</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install yum-plugin-downloadonly<br><span class="hljs-comment"># yum install --downloadonly --downloaddir=&lt;directory&gt; &lt;package-name&gt;</span><br>yum install --downloadonly --downloaddir=/root/mypackages/ httpd<br><span class="hljs-comment"># yum install --downloadonly --downloaddir=/root/mypackages/ httpd-2.2.6-40.el7</span><br></code></pre></td></tr></table></figure><p>方式2</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install yum-utils<br>yumdownloader --resolve httpd<br><span class="hljs-comment"># yumdownloader --resolve --destdir=/root/mypackages/ httpd</span><br><span class="hljs-comment"># yumdownloader &quot;@Development Tools&quot; --resolve --destdir /root/mypackages/</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>其他</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ssl/tls自签名证书</title>
     <link href="/2022/01/ssl-tls%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
     <url>/2022/01/ssl-tls%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</url>
