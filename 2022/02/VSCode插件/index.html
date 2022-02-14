@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="水长">
   <meta name="keywords" content="">
-  <title>TODO - 水长的Blog</title>
+  <title>VSCode插件 - 水长的Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="TODO">
+            <span class="h2" id="subtitle" title="VSCode插件">
               
             </span>
 
@@ -177,8 +177,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-23 22:40" pubdate>
-        2022年1月23日 晚上
+      <time datetime="2022-02-14 22:45" pubdate>
+        2022年2月14日 晚上
       </time>
     </span>
   
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      406 字
+      629 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      10
        分钟
     </span>
   
@@ -237,7 +237,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">TODO</h1>
+            <h1 style="display: none">VSCode插件</h1>
             
               <p class="note note-info">
                 
@@ -246,30 +246,33 @@
               </p>
             
             <div class="markdown-body">
-              <p>nm命令查看动态库的符号表<code>nm -D xxx.so</code><br><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/282616/why-nm-shows-no-symbols-for-lib-i386-linux-gnu-libc-so-6">https://unix.stackexchange.com/questions/282616/why-nm-shows-no-symbols-for-lib-i386-linux-gnu-libc-so-6</a></p>
-<blockquote>
-<p>LSB_5.0.0 Section 10.2.2.1, “ELF Section Types”, says a conforming shared lib should have either .symtab or .dynsym but not both. As part of the ABI library, libc is stripped out of the .symtab to be spec conforming.</p>
-</blockquote>
-<p>.symtab or .dynsym<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/59385335">FastHook：一种高效稳定、简洁易用的Android Hook框架</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63314325">FastHook——实现.dynsym段和.symtab段符号查询</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59372179">gcc中，__builtin_va_arg(ap, type)是如何实现的？</a><br>无责任x86 32位版本的实现，可以参考 <a target="_blank" rel="noopener" href="https://github.com/sonald/sos/blob/master/include/stdarg.h">https://github.com/sonald/sos/blob/master/include/stdarg.h</a><br>__builtin_va_arg_pack()<br>__builtin_va_arg_pack_len()<br><a target="_blank" rel="noopener" href="https://gcc.gnu.org/onlinedocs/gcc/Constructing-Calls.html">6.6 Constructing Function Calls</a></p>
-<p><strong>C语言函数重载</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/ypshowm/article/details/89096042">https://blog.csdn.net/ypshowm/article/details/89096042</a></p>
-<ol>
-<li>使用函数指针来实现，重载的函数不能使用同名称，只是类似的实现了函数重载功能</li>
-<li>重载函数使用可变参数，方式如打开文件open函数</li>
-<li>gcc有内置函数，程序使用编译函数可以实现函数重载<code>__builtin_types_compatible_p()和__builtin_choose_expr()</code></li>
-</ol>
-<ul>
-<li>可变参数<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">open</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *pathname, <span class="hljs-keyword">int</span> flags)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">open</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *pathname, <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">mode_t</span> mode)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">open</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *pathname, <span class="hljs-keyword">int</span> flags, ...)</span></span>;<br></code></pre></td></tr></table></figure></li>
-<li>*open O_PATH**</li>
-</ul>
-<p><strong>mount</strong><br>docker mount rslave<br><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/198590/what-is-a-bind-mount">https://unix.stackexchange.com/questions/198590/what-is-a-bind-mount</a><br><a target="_blank" rel="noopener" href="https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt">https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt</a><br><a target="_blank" rel="noopener" href="https://www.kernel.org/doc/Documentation/filesystems/fuse.txt">https://www.kernel.org/doc/Documentation/filesystems/fuse.txt</a><br><a target="_blank" rel="noopener" href="https://www.kernel.org/doc/Documentation/filesystems/fuse-io.txt">https://www.kernel.org/doc/Documentation/filesystems/fuse-io.txt</a><br><a target="_blank" rel="noopener" href="https://www.man7.org/linux/man-pages/man8/mount.8.html">https://www.man7.org/linux/man-pages/man8/mount.8.html</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-chattr.html">https://www.runoob.com/linux/linux-comm-chattr.html</a><br><a target="_blank" rel="noopener" href="https://bindfs.org/">https://bindfs.org/</a></p>
-<p>C++ Name Mangling/命名倾轧<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41969690/article/details/106730212">C++函数重载及原理(命名倾轧name mangling)</a><br><a target="_blank" rel="noopener" href="https://blog.oakbits.com/how-to-mangle-and-demangle-a-c-method-name.html">How To Mangle And Demangle A C++ Method Name</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013220338/article/details/51472322">C++中的name mangling</a><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/45022504/abi-cxa-demangle-why-buffer-needs-to-be-malloc-ed">https://stackoverflow.com/questions/45022504/abi-cxa-demangle-why-buffer-needs-to-be-malloc-ed</a></p>
-<p><strong>search key</strong></p>
-<ul>
-<li>动态路由协议</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348026261">代码分段</a></li>
-<li>dlopen 符号冲突 / Bing.com -Bsymbolic -Bsymbolic-functions DEEPBIND<br><a target="_blank" rel="noopener" href="https://zerol.me/2021/06/13/Linker-Symbol-Conflict/">https://zerol.me/2021/06/13/Linker-Symbol-Conflict/</a></li>
-</ul>
+              <p>VSCode插件</p>
+<a id="more"></a>
+
+<p>目录<br>[TOC]</p>
+<h1 id="VSCode插件"><a href="#VSCode插件" class="headerlink" title="VSCode插件"></a>VSCode插件</h1><h2 id="简体中文"><a href="#简体中文" class="headerlink" title="简体中文"></a>简体中文</h2><p>名称: Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code<br>ID: MS-CEINTL.vscode-language-pack-zh-hans<br>说明: Language pack extension for Chinese (Simplified)<br>发布者: Microsoft<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans">https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans</a></p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>名称: background<br>ID: shalldie.background<br>说明: A simple tool to make your vscode’s background look better!<br>发布者: shalldie<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=shalldie.background">https://marketplace.visualstudio.com/items?itemName=shalldie.background</a></p>
+<h2 id="通用-开发"><a href="#通用-开发" class="headerlink" title="通用(开发)"></a>通用(开发)</h2><p>名称: GitLens — Git supercharged<br>ID: eamodio.gitlens<br>说明: Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more<br>发布者: GitKraken<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens</a></p>
+<hr>
+<p>名称: Remote Development<br>ID: ms-vscode-remote.vscode-remote-extensionpack<br>说明: An extension pack that lets you open any folder in a container, on a remote machine, or in WSL and take advantage of VS Code’s full feature set.<br>发布者: Microsoft<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack</a></p>
+<hr>
+<p>名称: Better Comments<br>ID: aaron-bond.better-comments<br>说明: Improve your code commenting by annotating with alert, informational, TODOs, and more!<br>发布者: Aaron Bond<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments</a></p>
+<hr>
+<p>名称: indent-rainbow<br>ID: oderwat.indent-rainbow<br>说明: Makes indentation easier to read<br>发布者: oderwat<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow</a></p>
+<h2 id="C-C-开发"><a href="#C-C-开发" class="headerlink" title="C/C++开发"></a>C/C++开发</h2><p>名称: C/C++<br>ID: ms-vscode.cpptools<br>说明: C/C++ IntelliSense, debugging, and code browsing.<br>发布者: Microsoft<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools</a></p>
+<h2 id="Python开发"><a href="#Python开发" class="headerlink" title="Python开发"></a>Python开发</h2><p>名称: Python<br>ID: ms-python.python<br>说明: IntelliSense (Pylance), Linting, Debugging (multi-threaded, remote), Jupyter Notebooks, code formatting, refactoring, unit tests, and more.<br>发布者: Microsoft<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">https://marketplace.visualstudio.com/items?itemName=ms-python.python</a></p>
+<h2 id="Rust开发"><a href="#Rust开发" class="headerlink" title="Rust开发"></a>Rust开发</h2><p>名称: rust-analyzer<br>ID: matklad.rust-analyzer<br>说明: An alternative rust language server to the RLS<br>发布者: matklad<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer">https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer</a></p>
+<hr>
+<p>名称: Even Better TOML<br>ID: tamasfe.even-better-toml<br>说明: Fully-featured TOML support<br>发布者: tamasfe<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml">https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml</a></p>
+<hr>
+<p>名称: crates<br>ID: serayuzgur.crates<br>说明: Helps Rust developers managing dependencies with Cargo.toml. Only works with dependencies from crates.io.<br>发布者: Seray Uzgur<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates">https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates</a></p>
+<hr>
+<p>名称: CodeLLDB<br>ID: vadimcn.vscode-lldb<br>说明: A native debugger powered by LLDB.  Debug C++, Rust and other compiled languages.<br>发布者: Vadim Chugunov<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb">https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb</a></p>
+<hr>
+<h2 id="GO开发"><a href="#GO开发" class="headerlink" title="GO开发"></a>GO开发</h2><p>名称: Go<br>ID: golang.go<br>说明: Rich Go language support for Visual Studio Code<br>发布者: Go Team at Google<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=golang.Go">https://marketplace.visualstudio.com/items?itemName=golang.Go</a></p>
+<h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><p>名称: Graphviz (dot) language support for Visual Studio Code<br>ID: joaompinto.vscode-graphviz<br>说明: This extension provides GraphViz (dot) language support for Visual Studio Code<br>发布者: João Pinto<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=joaompinto.vscode-graphviz">https://marketplace.visualstudio.com/items?itemName=joaompinto.vscode-graphviz</a></p>
+<hr>
+<p>名称: PlantUML<br>ID: jebbs.plantuml<br>说明: Rich PlantUML support for Visual Studio Code.<br>发布者: jebbs<br>VS Marketplace 链接: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml">https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml</a></p>
 
             </div>
             <hr>
@@ -293,18 +296,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/VSCode%E6%8F%92%E4%BB%B6/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">VSCode插件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/cmake/">
-                        <span class="hidden-mobile">cmake</span>
+                      <a href="/2022/01/TODO/">
+                        <span class="hidden-mobile">TODO</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
