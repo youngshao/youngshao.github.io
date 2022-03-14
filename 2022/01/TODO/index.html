@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      406 字
+      1.4k 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      21
        分钟
     </span>
   
@@ -241,7 +241,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年2月14日 晚上
+                  本文最后更新于：2022年3月14日 晚上
                 
               </p>
             
@@ -270,6 +270,24 @@
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348026261">代码分段</a></li>
 <li>dlopen 符号冲突 / Bing.com -Bsymbolic -Bsymbolic-functions DEEPBIND<br><a target="_blank" rel="noopener" href="https://zerol.me/2021/06/13/Linker-Symbol-Conflict/">https://zerol.me/2021/06/13/Linker-Symbol-Conflict/</a></li>
 </ul>
+<p>Typora 最后一个免费版本 0.11.18<br><a target="_blank" rel="noopener" href="https://typora.io/windows/dev_release.html">Typora for windows/Linux — beta version release</a><br><a target="_blank" rel="noopener" href="https://www.typora.io/dev_release.html">Typora for mac — beta version release</a></p>
+<p>decltype指示符：选择并返回操作数的数据类型<br>using类型别名：两种方法可以用来定义类型别名，一种是 typedef ，另一种则是新标准中的 using</p>
+<p>默认构造函数<br>拷贝构造函数<br>赋值构造函数<br>移动构造函数<br>移动赋值构造函数<br>析构函数</p>
+<p>explicit关键字用于类内的单参数构造函数前面(或当除了第一个参数以外的其他参数都有默认值)。<br>显式缺省函数（=default）<br>显式删除函数（=delete）<br>override：保证在派生类中声明的重载函数，与基类的虚函数有相同的签名<br>final：阻止类的进一步派生和虚函数的进一步重写<br>const 成员函数可以使用类中的所有成员变量，但是不能修改它们的值</p>
+<p>构造函数初始化表<br>  在初始化表中，成员被初始化的次序不是你编写初始化表的次序，而是定义成员的次序。<br>  初始化 const 成员变量只有一种方法，就是通过参数初始化表<br>委托构造函数</p>
+<p>万能引用 完美转发</p>
+<h1 id="glibc多个版本共存"><a href="#glibc多个版本共存" class="headerlink" title="glibc多个版本共存"></a>glibc多个版本共存</h1><h2 id="源码编译glibc"><a href="#源码编译glibc" class="headerlink" title="源码编译glibc"></a>源码编译glibc</h2><blockquote>
+<p><strong>* LD_LIBRARY_PATH shouldn’t contain the current directory when<br>*</strong> building glibc. Please change the environment variable<br>*** and run configure again.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> glibc<br>mkdir build<br><span class="hljs-comment"># unset LD_LIBRARY_PATH</span><br>../configure --prefix=/opt/glibc/glibc-2.29<br>make<br>sudo make install<br></code></pre></td></tr></table></figure>
+<h2 id="动态库搜索路径优先级"><a href="#动态库搜索路径优先级" class="headerlink" title="动态库搜索路径优先级"></a>动态库搜索路径优先级</h2><p><code>rpath &gt; $LD_PRELOAD &gt; $LD_LIBRARY_PATH &gt; runpath &gt; ldconfig缓存 &gt; /lib:/usr/lib</code></p>
+<h3 id="rpath"><a href="#rpath" class="headerlink" title="rpath"></a>rpath</h3><h3 id="LD-PRELOAD"><a href="#LD-PRELOAD" class="headerlink" title="$LD_PRELOAD"></a>$LD_PRELOAD</h3><h3 id="LD-LIBRARY-PATH"><a href="#LD-LIBRARY-PATH" class="headerlink" title="$LD_LIBRARY_PATH"></a>$LD_LIBRARY_PATH</h3><p>LIBRARY_PATH环境变量用于在程序编译期间查找动态链接库时指定查找共享库的路径<br>LD_LIBRARY_PATH环境变量用于在程序加载运行期间查找动态链接库时指定除了系统默认路径之外的其他路径，注意，LD_LIBRARY_PATH中指定的路径会在系统默认路径之前进行查找。</p>
+<h3 id="runpath"><a href="#runpath" class="headerlink" title="runpath"></a>runpath</h3><h3 id="ldconfig缓存"><a href="#ldconfig缓存" class="headerlink" title="ldconfig缓存"></a>ldconfig缓存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">[shao@esxi-centos7 ~]$ cat /etc/ld.so.conf<br>include ld.so.conf.d/*.conf<br>[shao@esxi-centos7 ~]$ cat /etc/ld.so.conf.d/*<br>/usr/lib64//bind9-export/<br>/usr/lib64/dyninst<br><span class="hljs-comment"># Placeholder file, no vDSO hwcap entries used in this kernel.</span><br><span class="hljs-comment"># Placeholder file, no vDSO hwcap entries used in this kernel.</span><br><span class="hljs-comment"># Placeholder file, no vDSO hwcap entries used in this kernel.</span><br><span class="hljs-comment"># Placeholder file, no vDSO hwcap entries used in this kernel.</span><br><span class="hljs-comment"># Placeholder file, no vDSO hwcap entries used in this kernel.</span><br>/usr/lib64/mysql<br>/usr/lib64/qt-3.3/lib<br>[shao@esxi-centos7 ~]$ ll /etc/ld.so.conf.d/*<br>-rw-r--r--. 1 root root 26 Nov 25 00:39 /etc/ld.so.conf.d/bind-export-x86_64.conf<br>-rw-r--r--. 1 root root 19 Aug  9  2019 /etc/ld.so.conf.d/dyninst-x86_64.conf<br>-r--r--r--. 1 root root 63 Aug 26  2020 /etc/ld.so.conf.d/kernel-3.10.0-1127.19.1.el7.x86_64.conf<br>-r--r--r--. 1 root root 63 Feb  3  2021 /etc/ld.so.conf.d/kernel-3.10.0-1160.15.2.el7.x86_64.conf<br>-r--r--r--. 1 root root 63 Mar 17  2021 /etc/ld.so.conf.d/kernel-3.10.0-1160.21.1.el7.x86_64.conf<br>-r--r--r--. 1 root root 63 Oct 14 01:25 /etc/ld.so.conf.d/kernel-3.10.0-1160.45.1.el7.x86_64.conf<br>-r--r--r--. 1 root root 63 Jan 14 22:04 /etc/ld.so.conf.d/kernel-3.10.0-1160.53.1.el7.x86_64.conf<br>-rw-r--r--. 1 root root 17 Oct  2  2020 /etc/ld.so.conf.d/mariadb-x86_64.conf<br>-rw-r--r--. 1 root root 22 Jun 10  2014 /etc/ld.so.conf.d/qt-x86_64.conf<br>[shao@esxi-centos7 ~]$<br></code></pre></td></tr></table></figure>
+<h2 id="指定可执行程序或动态库的interpreter和rpath"><a href="#指定可执行程序或动态库的interpreter和rpath" class="headerlink" title="指定可执行程序或动态库的interpreter和rpath"></a>指定可执行程序或动态库的interpreter和rpath</h2><h3 id="编译时指定"><a href="#编译时指定" class="headerlink" title="编译时指定"></a>编译时指定</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wl,-rpath=<span class="hljs-string">&#x27;/opt/my-libs/lib:/other-libs&#x27;</span>,-dynamic-linker=<span class="hljs-string">&#x27;/lib/my-ld-linux.so.2&#x27;</span><br></code></pre></td></tr></table></figure>
+<h3 id="patchelf修改"><a href="#patchelf修改" class="headerlink" title="patchelf修改"></a>patchelf修改</h3><p><a target="_blank" rel="noopener" href="https://github.com/NixOS/patchelf">patchelf</a>: A small utility to modify the dynamic linker and RPATH of ELF executables</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ patchelf --set-interpreter /lib/my-ld-linux.so.2 my-program<br>$ patchelf --set-rpath /opt/my-libs/lib:/other-libs my-program<br></code></pre></td></tr></table></figure>
+<h2 id="LD-DEBUG"><a href="#LD-DEBUG" class="headerlink" title="LD_DEBUG"></a>LD_DEBUG</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ LD_DEBUG=<span class="hljs-built_in">help</span> ls<br>Valid options <span class="hljs-keyword">for</span> the LD_DEBUG environment variable are:<br><br>  libs        display library search paths<br>  reloc       display relocation processing<br>  files       display progress <span class="hljs-keyword">for</span> input file<br>  symbols     display symbol table processing<br>  bindings    display information about symbol binding<br>  versions    display version dependencies<br>  scopes      display scope information<br>  all         all previous options combined<br>  statistics  display relocation statistics<br>  unused      determined unused DSOs<br>  <span class="hljs-built_in">help</span>        display this <span class="hljs-built_in">help</span> message and <span class="hljs-built_in">exit</span><br><br>To direct the debugging output into a file instead of standard output<br>a filename can be specified using the LD_DEBUG_OUTPUT environment variable.<br></code></pre></td></tr></table></figure>
+<p>使用<code>ldd -u</code>可以看出程序不需要链接的so(非直接依赖的so)，使用<code>-Wl,--as-needed</code>编译选项就可以去除不需要链接的so.</p>
 
             </div>
             <hr>
